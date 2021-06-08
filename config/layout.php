@@ -2,329 +2,329 @@
 
 return [
 
-    // Self
+  // Self
+  'self' => [
+    'layout' => 'default', // blank, default
+    'rtl' => false, // true, false
+  ],
+
+  // Base Layout
+  'js' => [
+    'breakpoints' => [
+      'sm' => 576,
+      'md' => 768,
+      'lg' => 992,
+      'xl' => 1200,
+      'xxl' => 1200
+    ],
+    'colors' => [
+      'theme' => [
+        'base' => [
+          'white' => '#ffffff',
+          'primary' => '#6993FF',
+          'secondary' => '#E5EAEE',
+          'success' => '#1BC5BD',
+          'info' => '#8950FC',
+          'warning' => '#FFA800',
+          'danger' => '#F64E60',
+          'light' => '#F3F6F9',
+          'dark' => '#212121'
+        ],
+        'light' => [
+          'white' => '#ffffff',
+          'primary' => '#E1E9FF',
+          'secondary' => '#ECF0F3',
+          'success' => '#C9F7F5',
+          'info' => '#EEE5FF',
+          'warning' => '#FFF4DE',
+          'danger' => '#FFE2E5',
+          'light' => '#F3F6F9',
+          'dark' => '#D6D6E0'
+        ],
+        'inverse' => [
+          'white' => '#ffffff',
+          'primary' => '#ffffff',
+          'secondary' => '#212121',
+          'success' => '#ffffff',
+          'info' => '#ffffff',
+          'warning' => '#ffffff',
+          'danger' => '#ffffff',
+          'light' => '#464E5F',
+          'dark' => '#ffffff'
+        ]
+      ],
+      'gray' => [
+        'gray-100' => '#F3F6F9',
+        'gray-200' => '#ECF0F3',
+        'gray-300' => '#E5EAEE',
+        'gray-400' => '#D6D6E0',
+        'gray-500' => '#B5B5C3',
+        'gray-600' => '#80808F',
+        'gray-700' => '#464E5F',
+        'gray-800' => '#1B283F',
+        'gray-900' => '#212121'
+      ]
+    ],
+    'font-family' => 'Poppins'
+  ],
+
+  // Page loader
+  'page-loader' => [
+    'type' => '' // default, spinner-message, spinner-logo
+  ],
+
+  // Header
+  'header' => [
     'self' => [
-        'layout' => 'default', // blank, default
-        'rtl' => false, // true, false
+      'display' => true,
+      'width' => 'fluid', // fixed, fluid
+      'theme' => 'light', // light, dark
+      'fixed' => [
+        'desktop' => true,
+        'mobile' => true
+      ]
     ],
 
-    // Base Layout
-    'js' => [
-        'breakpoints' => [
-            'sm' => 576,
-            'md' => 768,
-            'lg' => 992,
-            'xl' => 1200,
-            'xxl' => 1200
-        ],
-        'colors' => [
-            'theme' => [
-                'base' => [
-                    'white' => '#ffffff',
-                    'primary' => '#6993FF',
-                    'secondary' => '#E5EAEE',
-                    'success' => '#1BC5BD',
-                    'info' => '#8950FC',
-                    'warning' => '#FFA800',
-                    'danger' => '#F64E60',
-                    'light' => '#F3F6F9',
-                    'dark' => '#212121'
-                ],
-                'light' => [
-                    'white' => '#ffffff',
-                    'primary' => '#E1E9FF',
-                    'secondary' => '#ECF0F3',
-                    'success' => '#C9F7F5',
-                    'info' => '#EEE5FF',
-                    'warning' => '#FFF4DE',
-                    'danger' => '#FFE2E5',
-                    'light' => '#F3F6F9',
-                    'dark' => '#D6D6E0'
-                ],
-                'inverse' => [
-                    'white' => '#ffffff',
-                    'primary' => '#ffffff',
-                    'secondary' => '#212121',
-                    'success' => '#ffffff',
-                    'info' => '#ffffff',
-                    'warning' => '#ffffff',
-                    'danger' => '#ffffff',
-                    'light' => '#464E5F',
-                    'dark' => '#ffffff'
-                ]
-            ],
-            'gray' => [
-                'gray-100' => '#F3F6F9',
-                'gray-200' => '#ECF0F3',
-                'gray-300' => '#E5EAEE',
-                'gray-400' => '#D6D6E0',
-                'gray-500' => '#B5B5C3',
-                'gray-600' => '#80808F',
-                'gray-700' => '#464E5F',
-                'gray-800' => '#1B283F',
-                'gray-900' => '#212121'
-            ]
-        ],
-        'font-family' => 'Poppins'
-    ],
-
-    // Page loader
-    'page-loader' => [
-        'type' => '' // default, spinner-message, spinner-logo
-    ],
-
-    // Header
-    'header' => [
-        'self' => [
-            'display' => true,
-            'width' => 'fluid', // fixed, fluid
-            'theme' => 'light', // light, dark
-            'fixed' => [
-                'desktop' => true,
-                'mobile' => true
-            ]
-        ],
-
-        'menu' => [
-            'self' => [
-                'display' => true,
-                'layout'  => 'default', // tab, default
-                'root-arrow' => false, // true, false
-            ],
-
-            'desktop' => [
-                'arrow' => true,
-                'toggle' => 'click',
-                'submenu' => [
-                    'theme' => 'light',
-                    'arrow' => true,
-                ]
-            ],
-
-            'mobile' => [
-                'submenu' => [
-                    'theme' => 'dark',
-                    'accordion' => true
-                ],
-            ],
-        ]
-    ],
-
-    // Subheader
-    'subheader' => [
+    'menu' => [
+      'self' => [
         'display' => true,
-        'displayDesc' => true,
-        'layout' => 'subheader-v1',
-        'fixed' => true,
-        'width' => 'fluid', // fixed, fluid
-        'clear' => false,
-        'layouts' => [
-            'subheader-v1' => 'Subheader v1',
-            'subheader-v2' => 'Subheader v2',
-            'subheader-v3' => 'Subheader v3',
-            'subheader-v4' => 'Subheader v4',
-        ],
-        'style' => 'solid' // transparent, solid. can be transparent only if 'fixed' => false
-    ],
+        'layout'  => 'default', // tab, default
+        'root-arrow' => false, // true, false
+      ],
 
-    // Content
-    'content' => [
-        'width' => 'fixed', // fluid, fixed
-        'extended' => false, // true, false
-    ],
-
-    // Brand
-    'brand' => [
-        'self' => [
-            'theme' => 'dark' // light, dark
+      'desktop' => [
+        'arrow' => true,
+        'toggle' => 'click',
+        'submenu' => [
+          'theme' => 'light',
+          'arrow' => true,
         ]
+      ],
+
+      'mobile' => [
+        'submenu' => [
+          'theme' => 'dark',
+          'accordion' => true
+        ],
+      ],
+    ]
+  ],
+
+  // Subheader
+  'subheader' => [
+    'display' => true,
+    'displayDesc' => true,
+    'layout' => 'subheader-v1',
+    'fixed' => true,
+    'width' => 'fluid', // fixed, fluid
+    'clear' => false,
+    'layouts' => [
+      'subheader-v1' => 'Subheader v1',
+      'subheader-v2' => 'Subheader v2',
+      'subheader-v3' => 'Subheader v3',
+      'subheader-v4' => 'Subheader v4',
+    ],
+    'style' => 'solid' // transparent, solid. can be transparent only if 'fixed' => false
+  ],
+
+  // Content
+  'content' => [
+    'width' => 'fixed', // fluid, fixed
+    'extended' => false, // true, false
+  ],
+
+  // Brand
+  'brand' => [
+    'self' => [
+      'theme' => 'dark' // light, dark
+    ]
+  ],
+
+  // Aside
+  'aside' => [
+    'self' => [
+      'theme' => 'dark', // light, dark
+      'display' => true,
+      'fixed' => true,
+      'minimize' => [
+        'toggle' => true, // allow toggle
+        'default' => false // default state
+      ]
     ],
 
-    // Aside
-    'aside' => [
-        'self' => [
-            'theme' => 'dark', // light, dark
-            'display' => true,
-            'fixed' => true,
-            'minimize' => [
-                'toggle' => true, // allow toggle
-                'default' => false // default state
-            ]
-        ],
-
-        'menu' => [
-            'dropdown' => false, // ok
-            'scroll' => false, // ok
-            'submenu' => [
-                'accordion' => true, // true, false
-                'dropdown' => [
-                    'arrow' => true,
-                    'hover-timeout' => 500 // in milliseconds
-                ]
-            ]
+    'menu' => [
+      'dropdown' => false, // ok
+      'scroll' => false, // ok
+      'submenu' => [
+        'accordion' => true, // true, false
+        'dropdown' => [
+          'arrow' => true,
+          'hover-timeout' => 500 // in milliseconds
         ]
+      ]
+    ]
+  ],
+
+  // Footer
+  'footer' => [
+    'width' => 'fluid', // fluid, fixed
+    'fixed' => false
+  ],
+
+  // Extras
+  'extras' => [
+
+    // Search
+    'search' => [
+      'display' => true,
+      'layout' => 'dropdown', // offcanvas, dropdown
+      'offcanvas' => [
+        'direction' => 'right'
+      ],
     ],
 
-    // Footer
-    'footer' => [
-        'width' => 'fluid', // fluid, fixed
-        'fixed' => false
+    // Notifications
+    'notifications' => [
+      'display' => true,
+      'layout' => 'dropdown', // offcanvas, dropdown
+      'dropdown' => [
+        'style' => 'dark' // light|dark
+      ],
+      'offcanvas' => [
+        'direction' => 'right'
+      ]
     ],
 
-    // Extras
-    'extras' => [
+    // Quick Actions
+    'quick-actions' => [
+      'display' => true,
+      'layout' => 'dropdown', // offcanvas, dropdown
+      'dropdown' => [
+        'style' => 'dark' // light|dark
+      ],
+      'offcanvas' => [
+        'direction' => 'right'
+      ]
+    ],
 
-        // Search
-        'search' => [
-            'display' => true,
-            'layout' => 'dropdown', // offcanvas, dropdown
-            'offcanvas' => [
-                'direction' => 'right'
-            ],
-        ],
+    // User
+    'user' => [
+      'display' => true,
+      'layout' => 'offcanvas', // offcanvas, dropdown
+      'dropdown' => [
+        'style' => 'dark' // light|dark
+      ],
+      'offcanvas' => [
+        'direction' => 'right'
+      ]
+    ],
 
-        // Notifications
-        'notifications' => [
-            'display' => true,
-            'layout' => 'dropdown', // offcanvas, dropdown
-            'dropdown' => [
-                'style' => 'dark' // light|dark
-            ],
-            'offcanvas' => [
-                'direction' => 'right'
-            ]
-        ],
+    // Languages
+    'languages' => [
+      'display' => true
+    ],
 
-        // Quick Actions
-        'quick-actions' => [
-            'display' => true,
-            'layout' => 'dropdown', // offcanvas, dropdown
-            'dropdown' => [
-                'style' => 'dark' // light|dark
-            ],
-            'offcanvas' => [
-                'direction' => 'right'
-            ]
-        ],
+    // Cart
+    'cart' => [
+      'display' => true,
+      'dropdown' => [
+        'style' => 'dark' // light|dark
+      ]
+    ],
 
-        // User
-        'user' => [
-            'display' => true,
-            'layout' => 'offcanvas', // offcanvas, dropdown
-            'dropdown' => [
-                'style' => 'dark' // light|dark
-            ],
-            'offcanvas' => [
-                'direction' => 'right'
-            ]
-        ],
+    // Quick Panel
+    'quick-panel' => [
+      'display' => true,
+      'offcanvas' => [
+        'direction' => 'right'
+      ]
+    ],
 
-        // Languages
-        'languages' => [
-            'display' => true
-        ],
+    // Chat
+    'chat' => [
+      'display' => true,
+    ],
 
-        // Cart
-        'cart' => [
-            'display' => true,
-            'dropdown' => [
-                'style' => 'dark' // light|dark
-            ]
-        ],
+    // Page Toolbar
+    'toolbar' => [
+      'display' => true
+    ],
 
-        // Quick Panel
-        'quick-panel' => [
-            'display' => true,
-            'offcanvas' => [
-                'direction' => 'right'
-            ]
-        ],
+    // Scrolltop
+    'scrolltop' => [
+      'display' => true
+    ]
+  ],
 
-        // Chat
-        'chat' => [
-            'display' => true,
-        ],
-
-        // Page Toolbar
-        'toolbar' => [
-            'display' => true
-        ],
-
-        // Scrolltop
-        'scrolltop' => [
-            'display' => true
+  // Demo Assets
+  'resources' => [
+    'favicon' => 'media/img/logo/favicon.ico',
+    'fonts' => [
+      'google' => [
+        'families' => [
+          'Poppins:300,400,500,600,700'
         ]
+      ]
     ],
+    'css' => [
+      'plugins/global/plugins.bundle.css',
+      'plugins/custom/prismjs/prismjs.bundle.css',
+      'css/style.bundle.css',
+      'css/login-4.css',
+    ],
+    'js' => [
+      'plugins/global/plugins.bundle.js',
+      'plugins/custom/prismjs/prismjs.bundle.js',
+      'js/scripts.bundle.js',
+    ],
+  ],
 
-    // Demo Assets
-    'resources' => [
-        'favicon' => 'media/img/logo/favicon.ico',
-        'fonts' => [
-            'google' => [
-                'families' => [
-                    'Poppins:300,400,500,600,700'
-                ]
-            ]
-        ],
-        'css' => [
-            'plugins/global/plugins.bundle.css',
-            'plugins/custom/prismjs/prismjs.bundle.css',
-            'css/style.bundle.css',
-            'css/login-4.css',
-        ],
-        'js' => [
-            'plugins/global/plugins.bundle.js',
-            'plugins/custom/prismjs/prismjs.bundle.js',
-            'js/scripts.bundle.js',
-        ],
+  // Website Assets
+  'website_resources' => [
+    'favicon' => 'media/img/logo/favicon.ico',
+    'css' => [
+      'website/vendor/bootstrap/css/bootstrap.min.css',
+      'website/vendor/fontawesome-free/css/all.min.css',
+      'website/vendor/animate/animate.min.css',
+      'website/vendor/simple-line-icons/css/simple-line-icons.min.css',
+      'website/vendor/owl.carousel/assets/owl.carousel.min.css',
+      'website/vendor/owl.carousel/assets/owl.theme.default.min.css',
+      'website/vendor/magnific-popup/magnific-popup.min.css',
+      'website/css/theme.css',
+      'website/css/theme-elements.css',
+      'website/css/theme-blog.css',
+      'website/css/theme-shop.css',
+      'website/vendor/rs-plugin/css/settings.css',
+      'website/vendor/rs-plugin/css/layers.css',
+      'website/vendor/rs-plugin/css/navigation.css',
+      'website/css/skins/skin-corporate-19.css',
+      'website/css/custom.css',
     ],
-
-    // Website Assets
-    'website_resources' => [
-        'favicon' => 'media/img/logo/favicon.ico',
-        'css' => [
-            'website/vendor/bootstrap/css/bootstrap.min.css',
-            'website/vendor/fontawesome-free/css/all.min.css',
-            'website/vendor/animate/animate.min.css',
-            'website/vendor/simple-line-icons/css/simple-line-icons.min.css',
-            'website/vendor/owl.carousel/assets/owl.carousel.min.css',
-            'website/vendor/owl.carousel/assets/owl.theme.default.min.css',
-            'website/vendor/magnific-popup/magnific-popup.min.css',
-            'website/css/theme.css',
-            'website/css/theme-elements.css',
-            'website/css/theme-blog.css',
-            'website/css/theme-shop.css',
-            'website/vendor/rs-plugin/css/settings.css',
-            'website/vendor/rs-plugin/css/layers.css',
-            'website/vendor/rs-plugin/css/navigation.css',
-            'website/css/skins/skin-corporate-19.css',
-            'website/css/custom.css',
-        ],
-        'js' => [
-            'website/master/style-switcher/style.switcher.localstorage.js',
-            'website/vendor/jquery/jquery.min.js',
-            'website/vendor/jquery.appear/jquery.appear.min.js',
-            'website/vendor/jquery.easing/jquery.easing.min.js',
-            'website/vendor/jquery.cookie/jquery.cookie.min.js',
-            'website/vendor/popper/umd/popper.min.js',
-            'website/vendor/bootstrap/js/bootstrap.min.js',
-            'website/vendor/common/common.min.js',
-            'website/vendor/jquery.validation/jquery.validate.min.js',
-            'website/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js',
-            'website/vendor/jquery.gmap/jquery.gmap.min.js',
-            'website/vendor/jquery.lazyload/jquery.lazyload.min.js',
-            'website/vendor/isotope/jquery.isotope.min.js',
-            'website/vendor/owl.carousel/owl.carousel.min.js',
-            'website/vendor/magnific-popup/jquery.magnific-popup.min.js',
-            'website/vendor/vide/jquery.vide.min.js',
-            'website/vendor/vivus/vivus.min.js',
-            'website/js/theme.js',
-            'website/js/custom.js',
-            'website/js/theme.init.js',
-            'website/vendor/rs-plugin/js/jquery.themepunch.tools.min.js',
-            'website/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js',
-            'website/master/analytics/analytics.js',
-        ],
+    'js' => [
+      'website/master/style-switcher/style.switcher.localstorage.js',
+      'website/vendor/jquery/jquery.min.js',
+      'website/vendor/jquery.appear/jquery.appear.min.js',
+      'website/vendor/jquery.easing/jquery.easing.min.js',
+      'website/vendor/jquery.cookie/jquery.cookie.min.js',
+      'website/vendor/popper/umd/popper.min.js',
+      'website/vendor/bootstrap/js/bootstrap.min.js',
+      'website/vendor/common/common.min.js',
+      'website/vendor/jquery.validation/jquery.validate.min.js',
+      'website/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js',
+      'website/vendor/jquery.gmap/jquery.gmap.min.js',
+      'website/vendor/jquery.lazyload/jquery.lazyload.min.js',
+      'website/vendor/isotope/jquery.isotope.min.js',
+      'website/vendor/owl.carousel/owl.carousel.min.js',
+      'website/vendor/magnific-popup/jquery.magnific-popup.min.js',
+      'website/vendor/vide/jquery.vide.min.js',
+      'website/vendor/vivus/vivus.min.js',
+      'website/js/theme.js',
+      'website/js/custom.js',
+      'website/js/theme.init.js',
+      'website/vendor/rs-plugin/js/jquery.themepunch.tools.min.js',
+      'website/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js',
+      'website/master/analytics/analytics.js',
     ],
+  ],
 
 ];
