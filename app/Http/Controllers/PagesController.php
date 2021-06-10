@@ -27,6 +27,162 @@ class PagesController extends Controller
     return view('pages.dashboard', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
+  public function chorale()
+  {
+    $page_title = 'chorale';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.chorale', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function profil()
+  {
+    $page_title = 'profil';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.profil', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function user()
+  {
+    $page_title = 'user';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.user', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function waiting()
+  {
+    $page_title = 'waiting';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.waiting', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function title()
+  {
+    $page_title = 'title';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.title', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function media()
+  {
+    $page_title = 'media';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.media', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function tools()
+  {
+    $page_title = 'tools';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.tools', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function contributions()
+  {
+    $page_title = 'contributions';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.contributions', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function events()
+  {
+    $page_title = 'events';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.events', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function repetition()
+  {
+    $page_title = 'repetition';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.repetition', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function event_type()
+  {
+    $page_title = 'event_type';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.event_type', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function actuality()
+  {
+    $page_title = 'actuality';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.actuality', compact('page_title', 'user', 'user', 'abb'));
+  }
+
+  public function actuality_cat()
+  {
+    $page_title = 'actuality_cat';
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.actuality_cat', compact('page_title', 'user', 'user', 'abb'));
+  }
+
   /**
    * Demo methods below
    */
@@ -37,7 +193,13 @@ class PagesController extends Controller
     $page_title = 'Datatables';
     $page_description = 'This is datatables test page';
 
-    return view('pages.datatables', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.datatables', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // KTDatatables
@@ -46,7 +208,13 @@ class PagesController extends Controller
     $page_title = 'KTDatatables';
     $page_description = 'This is KTdatatables test page';
 
-    return view('pages.ktdatatables', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.ktdatatables', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // Select2
@@ -55,7 +223,13 @@ class PagesController extends Controller
     $page_title = 'Select 2';
     $page_description = 'This is Select2 test page';
 
-    return view('pages.select2', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.select2', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // custom-icons
@@ -64,7 +238,13 @@ class PagesController extends Controller
     $page_title = 'customIcons';
     $page_description = 'This is customIcons test page';
 
-    return view('pages.icons.custom-icons', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.icons.custom-icons', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // flaticon
@@ -73,7 +253,13 @@ class PagesController extends Controller
     $page_title = 'flaticon';
     $page_description = 'This is flaticon test page';
 
-    return view('pages.icons.flaticon', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.icons.flaticon', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // fontawesome
@@ -82,7 +268,13 @@ class PagesController extends Controller
     $page_title = 'fontawesome';
     $page_description = 'This is fontawesome test page';
 
-    return view('pages.icons.fontawesome', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.icons.fontawesome', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // lineawesome
@@ -91,7 +283,13 @@ class PagesController extends Controller
     $page_title = 'lineawesome';
     $page_description = 'This is lineawesome test page';
 
-    return view('pages.icons.lineawesome', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.icons.lineawesome', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // socicons
@@ -100,7 +298,13 @@ class PagesController extends Controller
     $page_title = 'socicons';
     $page_description = 'This is socicons test page';
 
-    return view('pages.icons.socicons', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.icons.socicons', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // svg
@@ -109,12 +313,24 @@ class PagesController extends Controller
     $page_title = 'svg';
     $page_description = 'This is svg test page';
 
-    return view('pages.icons.svg', compact('page_title', 'page_description'));
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('pages.icons.svg', compact('page_title', 'page_description', 'user', 'abb'));
   }
 
   // Quicksearch Result
   public function quickSearch()
   {
-    return view('layout.partials.extras._quick_search_result');
+    $user = Auth::user();
+    $abb = '';
+
+    foreach(explode(' ', $user->nom_complet) as $name) {
+      $abb .= $name[0];
+    }
+    return view('layout.partials.extras._quick_search_result', compact('user', 'abb'));
   }
 }

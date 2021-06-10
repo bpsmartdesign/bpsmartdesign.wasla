@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Auth;
 
 //////////////////////////////////////////////////////////////////////////////////////////////// App routes
 Route::get('/datatables', 'PagesController@datatables');
-Route::get('/ktdatatables', 'PagesController@ktDatatables');
 Route::get('/select2', 'PagesController@select2');
 Route::get('/icons/custom-icons', 'PagesController@customIcons');
 Route::get('/icons/flaticon', 'PagesController@flaticon');
@@ -29,9 +28,23 @@ Route::prefix('my_space')
   ->middleware('auth')
   ->group(function () {
     Route::get('/', 'PagesController@index');
+    Route::get('/chorale', 'PagesController@chorale');
+    Route::get('/profil', 'PagesController@profil');
+    Route::get('/profil', 'PagesController@profil');
+    Route::get('/user', 'PagesController@user');
+    Route::get('/waiting', 'PagesController@waiting');
+    Route::get('/title', 'PagesController@title');
+    Route::get('/media', 'PagesController@media');
+    Route::get('/tools', 'PagesController@tools');
+    Route::get('/contributions', 'PagesController@contributions');
+    Route::get('/events', 'PagesController@events');
+    Route::get('/repetition', 'PagesController@repetition');
+    Route::get('/event_type', 'PagesController@event_type');
+    Route::get('/actuality', 'PagesController@actuality');
+    Route::get('/actuality_cat', 'PagesController@actuality_cat');
   });
 
 // Quick search dummy route to display html elements in search dropdown (header search)
 Route::get('/quick-search', 'PagesController@quickSearch')->name('quick-search');
 
-Route::get('/home', 'HomeController@index')->name('home');
+

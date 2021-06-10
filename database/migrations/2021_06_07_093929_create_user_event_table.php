@@ -17,6 +17,7 @@ class CreateUserEventTable extends Migration
       $table->bigIncrements('id');
       $table->unsignedInteger('user_id');
       $table->unsignedInteger('event_id');
+      $table->boolean('confirmation_status')->default(false);
 
       $table->unsignedInteger('created_by_user_id');
       $table->softDeletes();
