@@ -1,4 +1,4 @@
-# Metronic 7 + Laravel 7
+# Chorale WASLA + Laravel 7
 
 ### Introduction
 
