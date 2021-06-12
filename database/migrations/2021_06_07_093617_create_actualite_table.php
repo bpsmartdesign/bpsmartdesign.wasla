@@ -18,6 +18,7 @@ class CreateActualiteTable extends Migration
       $table->unsignedInteger('user_id');
       $table->string('titre')->unique();
       $table->string('sous_titre')->nullable();
+      $table->enum('status', ['draft', 'is_ok', 'is_online'])->default('draft');
       $table->longText('contenu')->nullable();
 
       $table->unsignedInteger('created_by_user_id');

@@ -5,13 +5,13 @@
 @section('content')
 
 <!--begin::Content-->
-<div class=" login-container d-flex flex-center flex-row flex-row-fluid order-2 order-lg-1 flex-row-fluid bg-white py-lg-0 pb-lg-0 pt-15 pb-12">
+<div class="login-container d-flex flex-center flex-row flex-row-fluid order-2 order-lg-1 flex-row-fluid bg-white py-lg-0 pb-lg-0 pt-15 pb-12">
   <!--begin::Container-->
   <div class="login-content login-content-signup d-flex flex-column">
     <!--begin::Aside Top-->
-    <div class="d-flex flex-column-auto flex-column px-10">
+    <div class="d-flex flex-column-auto flex-column px-10 mt-10">
       <!--begin::Aside header-->
-      <a href="#" class="login-logo pb-lg-4 pb-10">
+      <a href="#" class="login-logo pb-lg-4 pb-10 mt-10">
         <img src="{{ asset('website/media/img/logo.png') }}" class="max-h-70px" alt="" />
       </a>
       <!--end::Aside header-->
@@ -41,8 +41,18 @@
 
           <!--begin::Form Group-->
           <div class="form-group">
+            <label class="font-size-h6 font-weight-bolder text-dark">Civilité</label>
+            <select class="form-control form-control-solid kt-select2 select2 h-auto py-4 px-3 border-0 rounded-lg font-size-h6" id="kt_select2_1" name="sexe" style="width: 100% !important;" required>
+              <option value="m">Homme</option>
+              <option value="f">Femme</option>
+            </select>
+          </div>
+          <!--end::Form Group-->
+
+          <!--begin::Form Group-->
+          <div class="form-group">
             <label class="font-size-h6 font-weight-bolder text-dark">Nom complet</label>
-            <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 " name="nom_complet" placeholder="Votre nom complet" value="{{ old('nom_complet') }}" required />
+            <input type="text" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="nom_complet" placeholder="Votre nom complet" value="{{ old('nom_complet') }}" required />
 
             @error('nom_complet')
             <div class="alert alert-custom alert-notice alert-light-danger fade show mt-2 py-3" role="alert">
@@ -58,10 +68,63 @@
           </div>
           <!--end::Form Group-->
 
+          <div class="form-group row">
+            <div class="col-lg-6">
+              <label class="font-size-h6 font-weight-bolder text-dark">Adresse complete 1</label>
+              <input type="text" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="address1" placeholder="..." value="{{ old('address1') }}" />
+            </div>
+            <div class="col-lg-6">
+              <label class="font-size-h6 font-weight-bolder text-dark">Adresse complete 2</label>
+              <input type="text" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="address2" placeholder="..." value="{{ old('address2') }}" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-lg-6">
+              <label class="font-size-h6 font-weight-bolder text-dark">Contact 1</label>
+              <input type="text" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="phone1" placeholder="..." value="{{ old('phone1') }}" />
+            </div>
+            <div class="col-lg-6">
+              <label class="font-size-h6 font-weight-bolder text-dark">Contact 2</label>
+              <input type="text" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="phone2" placeholder="..." value="{{ old('phone2') }}" />
+            </div>
+          </div>
+
+          <div class="separator separator-dashed my-10"></div>
+
+          <div class="form-group row">
+            <div class="col-lg-4">
+              <label class="font-size-h6 font-weight-bolder text-dark">Instruments maitrisés</label>
+              <select class="form-control form-control-solid kt-select2 select2 h-auto py-4 px-3 border-0 rounded-lg font-size-h6" id="kt_select2_2" name="tools[]" style="width: 100% !important;" multiple>
+                @foreach($tools as $tool)
+                <option value="{{ $tool->id }}">{{ $tool->nom }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="col-lg-4">
+              <label class="font-size-h6 font-weight-bolder text-dark">Roles</label>
+              <select class="form-control form-control-solid kt-select2 select2 h-auto py-4 px-3 border-0 rounded-lg font-size-h6" id="kt_select2_3" name="titles[]" style="width: 100% !important;" multiple>
+                @foreach($titles as $title)
+                <option value="{{ $title->id }}">{{ $title->title }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="col-lg-4">
+              <label class="font-size-h6 font-weight-bolder text-dark">Voix</label>
+              <select class="form-control form-control-solid kt-select2 select2 h-auto py-4 px-3 border-0 rounded-lg font-size-h6" id="kt_select2_4" name="voices[]" style="width: 100% !important;" multiple>
+                @foreach($voices as $voice)
+                <option value="{{ $voice->id }}">{{ $voice->name }}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+
+          <div class="separator separator-dashed my-10"></div>
+
           <!--begin::Form Group-->
           <div class="form-group">
             <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-            <input type="email" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 " name="email" placeholder="votre addresse email" value="{{ old('email') }}" required />
+            <input type="email" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="email" placeholder="votre addresse email" value="{{ old('email') }}" required />
 
             @error('email')
             <div class="alert alert-custom alert-notice alert-light-danger fade show mt-2 py-3" role="alert">
@@ -80,7 +143,7 @@
           <!--begin::Form Group-->
           <div class="form-group">
             <label class="font-size-h6 font-weight-bolder text-dark">Mot de passe</label>
-            <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 " name="password" placeholder="Mot de passe" value="{{ old('password') }}" required />
+            <input type="password" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="password" placeholder="Mot de passe" value="{{ old('password') }}" required />
 
             @error('password')
             <div class="alert alert-custom alert-notice alert-light-danger fade show mt-2 py-3" role="alert">
@@ -99,7 +162,7 @@
           <!--begin::Form Group-->
           <div class="form-group">
             <label class="font-size-h6 font-weight-bolder text-dark">Confirmation Mot de passe</label>
-            <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 " name="password_confirmation" placeholder="Confirmer le mot de passe" value="{{ old('password_confirmation') }}" required />
+            <input type="password" class="form-control form-control-solid h-auto py-4 px-3 border-0 rounded-lg font-size-h6 " name="password_confirmation" placeholder="Confirmer le mot de passe" value="{{ old('password_confirmation') }}" required />
           </div>
           <!--end::Form Group-->
         </div>
@@ -132,4 +195,12 @@
 </div>
 <!--begin::Content-->
 
+@endsection
+{{-- Scripts Section --}}
+@section('scripts')
+<script>
+  $(document).ready(function() {
+    $('.select2').select2();
+  });
+</script>
 @endsection

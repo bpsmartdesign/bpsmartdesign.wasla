@@ -30,7 +30,7 @@
                         data-lineheight="['55','55','90','95']">Welcome to WASLA chorale (Sing a song)</h1>
 
                     <a  class="tp-caption btn btn btn-dark font-weight-semibold text-color-light"
-                        href="contact_us"
+                        href="register"
                         data-frames='[{"delay":3500,"speed":2000,"frame":"0","from":"opacity:0;y:50%;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
                         data-x="center"
                         data-y="center" data-voffset="['90','90','150','225']"

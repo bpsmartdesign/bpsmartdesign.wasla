@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" {{ Metronic::printAttrs('html') }} {{ Metronic::printClasses('html') }}>
 
-<head>
+<head style="overflow-x: hidden !important;">
   <meta charset="utf-8" />
 
   {{-- Title Section --}}
@@ -31,7 +31,7 @@
   @yield('styles')
 </head>
 
-<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+<body style="overflow-x: hidden !important;" id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 
 
   <!--begin::Main-->
@@ -39,7 +39,45 @@
     <!--begin::Login-->
     <div class=" login login-4 wizard d-flex flex-column flex-lg-row flex-column-fluid wizard" id="kt_login">
       <!--begin::Content-->
+      @if(\Illuminate\Support\Facades\Session::has('success'))
+
+      <div class="login-container d-flex flex-center flex-row flex-row-fluid order-2 order-lg-1 flex-row-fluid bg-white py-lg-0 pb-lg-0 pt-15 pb-12">
+        <!--begin::Container-->
+        <div class="login-content login-content-signup d-flex flex-column">
+          <!--begin::Aside Top-->
+          <div class="d-flex flex-column-auto flex-column px-10 mt-10">
+            <!--begin::Aside header-->
+            <a href="#" class="login-logo pb-lg-4 pb-10 mt-10">
+              <img src="{{ asset('website/media/img/logo.png') }}" class="max-h-70px" alt="" />
+            </a>
+            <!--end::Aside header-->
+
+            <!--begin: Wizard Nav-->
+            <div class="wizard-nav pt-5 pt-lg-15 pb-10">
+              <div class="alert alert-custom alert-notice alert-light-success fade show mb-5" role="alert" style="position: absolute;">
+                <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                <div class="alert-text">{{ \Illuminate\Support\Facades\Session::get('success') }}</div>
+                <div class="alert-close">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                  </button>
+                </div>
+              </div>
+              <div class="pb-10 pb-lg-12">
+                <div class="text-muted font-weight-bold font-size-h4">
+                  <a href="{{ route('home') }}" class="btn btn-primary text-primary font-weight-bolder">Retour</a>
+                </div>
+              </div>
+            </div>
+            <!--end: Wizard Nav-->
+          </div>
+          <!--end::Aside Top-->
+        </div>
+        <!--end::Container-->
+      </div>
+      @else
       @yield('content')
+      @endif
       <!--begin::Content-->
 
       <!--begin::Aside-->

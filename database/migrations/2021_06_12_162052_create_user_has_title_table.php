@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateUserHasTitleTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,10 +13,10 @@ class CreateRolesTable extends Migration
    */
   public function up()
   {
-    Schema::create('roles', function (Blueprint $table) {
+    Schema::create('user_has_title', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->string('nom')->unique();
-      $table->text('description')->nullable();
+      $table->unsignedInteger('user_id');
+      $table->unsignedInteger('title_id');
 
       $table->unsignedInteger('created_by_user_id');
       $table->softDeletes();
@@ -31,6 +31,6 @@ class CreateRolesTable extends Migration
    */
   public function down()
   {
-    Schema::dropIfExists('roles');
+    Schema::dropIfExists('user_has_title');
   }
 }

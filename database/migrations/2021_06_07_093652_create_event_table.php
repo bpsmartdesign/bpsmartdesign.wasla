@@ -17,10 +17,12 @@ class CreateEventTable extends Migration
       $table->bigIncrements('id');
       $table->string('titre')->unique();
       $table->string('sous_titre')->nullable();
+      $table->string('thumbnail')->nullable();
       $table->date('date')->nullable();
       $table->time('heure')->nullable();
       $table->boolean('necessite_repetition')->default(false);
       $table->longText('description')->nullable();
+      $table->enum('status', ['draft', 'is_ok', 'is_online'])->default('draft');
 
       $table->unsignedInteger('created_by_user_id');
       $table->softDeletes();

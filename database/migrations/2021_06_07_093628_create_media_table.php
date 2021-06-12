@@ -15,7 +15,7 @@ class CreateMediaTable extends Migration
   {
     Schema::create('media', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->enum('type', ['image', 'video', 'document'])->nullable();
+      $table->enum('type', ['image', 'video', 'document', 'mp3'])->nullable();
       $table->string('nom')->unique();
       $table->string('uri_fichier', 255)->nullable();
 

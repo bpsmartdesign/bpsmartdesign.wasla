@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Tools;
+
 class PagesController extends Controller
 {
 
@@ -20,7 +22,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
 
@@ -33,7 +35,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.chorale', compact('page_title', 'user', 'user', 'abb'));
@@ -45,7 +47,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.profil', compact('page_title', 'user', 'user', 'abb'));
@@ -57,7 +59,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.user', compact('page_title', 'user', 'user', 'abb'));
@@ -69,7 +71,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.waiting', compact('page_title', 'user', 'user', 'abb'));
@@ -77,11 +79,11 @@ class PagesController extends Controller
 
   public function title()
   {
-    $page_title = 'title';
+    $page_title = 'Rôles';
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.title', compact('page_title', 'user', 'user', 'abb'));
@@ -93,22 +95,10 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.media', compact('page_title', 'user', 'user', 'abb'));
-  }
-
-  public function tools()
-  {
-    $page_title = 'tools';
-    $user = Auth::user();
-    $abb = '';
-
-    foreach(explode(' ', $user->nom_complet) as $name) {
-      $abb .= $name[0];
-    }
-    return view('pages.tools', compact('page_title', 'user', 'user', 'abb'));
   }
 
   public function contributions()
@@ -117,7 +107,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.contributions', compact('page_title', 'user', 'user', 'abb'));
@@ -129,7 +119,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.events', compact('page_title', 'user', 'user', 'abb'));
@@ -141,7 +131,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.repetition', compact('page_title', 'user', 'user', 'abb'));
@@ -153,7 +143,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.event_type', compact('page_title', 'user', 'user', 'abb'));
@@ -165,7 +155,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.actuality', compact('page_title', 'user', 'user', 'abb'));
@@ -177,7 +167,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.actuality_cat', compact('page_title', 'user', 'user', 'abb'));
@@ -196,7 +186,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.datatables', compact('page_title', 'page_description', 'user', 'abb'));
@@ -211,7 +201,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.ktdatatables', compact('page_title', 'page_description', 'user', 'abb'));
@@ -226,7 +216,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.select2', compact('page_title', 'page_description', 'user', 'abb'));
@@ -241,7 +231,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.icons.custom-icons', compact('page_title', 'page_description', 'user', 'abb'));
@@ -256,7 +246,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.icons.flaticon', compact('page_title', 'page_description', 'user', 'abb'));
@@ -271,7 +261,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.icons.fontawesome', compact('page_title', 'page_description', 'user', 'abb'));
@@ -286,7 +276,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.icons.lineawesome', compact('page_title', 'page_description', 'user', 'abb'));
@@ -301,7 +291,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.icons.socicons', compact('page_title', 'page_description', 'user', 'abb'));
@@ -316,7 +306,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('pages.icons.svg', compact('page_title', 'page_description', 'user', 'abb'));
@@ -328,7 +318,7 @@ class PagesController extends Controller
     $user = Auth::user();
     $abb = '';
 
-    foreach(explode(' ', $user->nom_complet) as $name) {
+    foreach (explode(' ', $user->nom_complet) as $name) {
       $abb .= $name[0];
     }
     return view('layout.partials.extras._quick_search_result', compact('user', 'abb'));

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventInstrumentTable extends Migration
+class CreateVoiceTypeUserTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,10 +13,10 @@ class CreateEventInstrumentTable extends Migration
    */
   public function up()
   {
-    Schema::create('event_instrument', function (Blueprint $table) {
+    Schema::create('voice_type_user', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->unsignedInteger('event_id');
-      $table->unsignedInteger('instrument_id');
+      $table->unsignedInteger('user_id');
+      $table->unsignedInteger('voice_type_id');
 
       $table->unsignedInteger('created_by_user_id');
       $table->softDeletes();
@@ -31,6 +31,6 @@ class CreateEventInstrumentTable extends Migration
    */
   public function down()
   {
-    Schema::dropIfExists('event_instrument');
+    Schema::dropIfExists('voice_type_user');
   }
 }

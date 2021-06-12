@@ -35,13 +35,15 @@ Route::prefix('my_space')
     Route::get('/waiting', 'PagesController@waiting');
     Route::get('/title', 'PagesController@title');
     Route::get('/media', 'PagesController@media');
-    Route::get('/tools', 'PagesController@tools');
     Route::get('/contributions', 'PagesController@contributions');
     Route::get('/events', 'PagesController@events');
     Route::get('/repetition', 'PagesController@repetition');
     Route::get('/event_type', 'PagesController@event_type');
     Route::get('/actuality', 'PagesController@actuality');
     Route::get('/actuality_cat', 'PagesController@actuality_cat');
+
+    Route::resource('/tools', 'ToolsController');
+    Route::resource('/title', 'TitleController');
   });
 
 // Quick search dummy route to display html elements in search dropdown (header search)
