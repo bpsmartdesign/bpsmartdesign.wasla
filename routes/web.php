@@ -28,7 +28,6 @@ Route::prefix('my_space')
   ->middleware('auth')
   ->group(function () {
     Route::get('/', 'PagesController@index');
-    Route::get('/chorale', 'PagesController@chorale');
     Route::get('/profil', 'PagesController@profil');
     Route::get('/profil', 'PagesController@profil');
     Route::get('/user', 'PagesController@user');
@@ -42,6 +41,7 @@ Route::prefix('my_space')
     Route::get('/actuality', 'PagesController@actuality');
     Route::get('/actuality_cat', 'PagesController@actuality_cat');
 
+    Route::resource('/chorale', 'ChoraleController');
     Route::resource('/tools', 'ToolsController');
     Route::resource('/title', 'TitleController');
   });

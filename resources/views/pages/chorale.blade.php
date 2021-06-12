@@ -25,17 +25,17 @@
                   <!--begin::Symbol-->
                   <div class="symbol symbol-120 symbol-circle symbol-success overflow-hidden">
                     <span class="symbol-label">
-                      <img src="{{ asset('') }}" class="h-75 align-self-end" alt="Chorale logo" />
+                      <img src="{{ asset('website/media/img/logo.png') }}" class="h-75 align-self-center" alt="Chorale logo" />
                     </span>
                   </div>
                   <!--end::Symbol-->
 
                   <!--begin::Username-->
-                  <a href="#" class="card-title font-weight-bolder text-dark-75 text-hover-primary font-size-h4 m-0 pt-7 pb-1">Chorale name</a>
+                  <a href="#" class="card-title font-weight-bolder text-dark-75 text-hover-primary font-size-h4 m-0 pt-7 pb-1">{{ count($datas) > 0 ? $datas[0]->name : 'Nothing saved yet' }}</a>
                   <!--end::Username-->
 
                   <!--begin::Info-->
-                  <div class="font-weight-bold text-dark-50 font-size-sm pb-6">Chorale address</div>
+                  <div class="font-weight-bold text-dark-50 font-size-sm pb-6">{{ count($datas) > 0 ? $datas[0]->address1 : 'Nothing saved yet' }}</div>
                   <!--end::Info-->
                 </div>
                 <!--end::Header-->
@@ -44,7 +44,7 @@
                 <div class="pt-1">
                   <!--begin::Text-->
                   <p class="text-dark-75 font-weight-nirmal font-size-lg m-0 pb-7">
-                    Chorale short description
+                    {{ count($datas) > 0 ? $datas[0]->description : 'Nothing saved yet' }}
                   </p>
                   <!--end::Text-->
 
@@ -76,7 +76,7 @@
                     <!--end::Text-->
 
                     <!--begin::label-->
-                    <span class="font-weight-bolder label label-xl label-light-success label-inline px-3 py-5 min-w-45px">60</span>
+                    <span class="font-weight-bolder label label-xl label-light-success label-inline px-3 py-5 min-w-45px">{{ $nbr_user }}</span>
                     <!--end::label-->
                   </div>
                   <!--end::Item-->
@@ -107,7 +107,7 @@
                     <!--end::Text-->
 
                     <!--begin::label-->
-                    <span class="font-weight-bolder label label-xl label-light-danger label-inline px-3 py-5 min-w-45px">7</span>
+                    <span class="font-weight-bolder label label-xl label-light-danger label-inline px-3 py-5 min-w-45px">{{ $nbr_event }}</span>
                     <!--end::label-->
                   </div>
                   <!--end::Item-->
@@ -138,7 +138,7 @@
                     <!--end::Text-->
 
                     <!--begin::label-->
-                    <span class="font-weight-bolder label label-xl label-light-info label-inline py-5 min-w-45px">+23</span>
+                    <span class="font-weight-bolder label label-xl label-light-info label-inline py-5 min-w-45px">+{{ $nbr_actualite }}</span>
                     <!--end::label-->
                   </div>
                   <!--end::Item-->
@@ -189,53 +189,33 @@
             <div class="tab-content pt-5">
               <!--begin::Tab Content-->
               <div class="tab-pane active" id="kt_apps_contacts_view_tab_2" role="tabpanel">
-                <form class="form">
-                  <!--begin::Heading-->
-                  <div class="row">
-                    <div class="col-lg-9 col-xl-6 offset-xl-3">
-                      <h3 class="font-size-h6 mb-5">Legal Info:</h3>
-                    </div>
-                  </div>
-                  <!--end::Heading-->
+                <form class="form" method="POST" action="{{ route('chorale.store') }}">
+                  @csrf
 
                   <div class="form-group row">
                     <label class="col-xl-3 col-lg-3 text-right col-form-label">Photo</label>
                     <div class="col-lg-9 col-xl-9">
-                      <div class="image-input image-input-outline image-input-circle" id="kt_user_avatar" style="background-image: url(/media/users/blank.png)">
-                        <div class="image-input-wrapper" style="background-image: url(/media/svg/avatars/007-boy-2.svg)"></div>
-
-                        <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                          <i class="fa fa-pen icon-sm text-muted"></i>
-                          <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
-                          <input type="hidden" name="profile_avatar_remove" />
-                        </label>
-
-                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                          <i class="ki ki-bold-close icon-xs text-muted"></i>
-                        </span>
-
-                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                          <i class="ki ki-bold-close icon-xs text-muted"></i>
-                        </span>
+                      <div class="image-input image-input-outline image-input-circle" id="kt_user_avatar" style="background: #eee">
+                        <div class="image-input-wrapper" style="background-image: url(/website/media/img/logo.png)"></div>
                       </div>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-xl-3 col-lg-3 text-right col-form-label">Name</label>
+                    <label class="col-xl-3 col-lg-3 text-right col-form-label">Nom</label>
                     <div class="col-lg-9 col-xl-6">
-                      <input class="form-control form-control-lg form-control-solid" type="text" value="Nick" />
+                      <input class="form-control form-control-lg form-control-solid" type="text" value="{{ count($datas) > 0 ? $datas[0]->name : '' }}" placeholder="Nom de la chorale" name="name" />
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-xl-3 col-lg-3 text-right col-form-label">Address</label>
+                    <label class="col-xl-3 col-lg-3 text-right col-form-label">Addresse</label>
                     <div class="col-lg-9 col-xl-6">
-                      <input class="form-control form-control-lg form-control-solid" type="text" value="Bold" />
+                      <input class="form-control form-control-lg form-control-solid" type="text" value="{{ count($datas) > 0 ? $datas[0]->address1 : '' }}" placeholder="Addresse principale de la chorale" name="address1" />
                     </div>
                   </div>
                   <div class="form-group row">
                     <label class="col-xl-3 col-lg-3 text-right col-form-label">Description</label>
                     <div class="col-lg-9 col-xl-6">
-                      <input class="form-control form-control-lg form-control-solid" type="text" value="Loop Inc." />
+                      <input class="form-control form-control-lg form-control-solid" type="text" value="{{ count($datas) > 0 ? $datas[0]->description : '' }}" placeholder="Description brève de la chorale" name="description" />
                       <span class="form-text text-muted">Random text to explain what is the chorale description.</span>
                     </div>
                   </div>
@@ -255,7 +235,7 @@
                     <div class="col-lg-9 col-xl-6">
                       <div class="input-group input-group-lg input-group-solid">
                         <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                        <input type="text" class="form-control form-control-lg form-control-solid" value="+35278953712" placeholder="Phone" />
+                        <input type="text" class="form-control form-control-lg form-control-solid" value="{{ count($datas) > 0 ? $datas[0]->phone1 : '' }}" placeholder="Phone" name="phone1" />
                       </div>
                       <span class="form-text text-muted">We'll never share your phone number with anyone else.</span>
                     </div>
@@ -265,7 +245,7 @@
                     <div class="col-lg-9 col-xl-6">
                       <div class="input-group input-group-lg input-group-solid">
                         <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                        <input type="text" class="form-control form-control-lg form-control-solid" value="nick.bold@loop.com" placeholder="Email" />
+                        <input type="text" class="form-control form-control-lg form-control-solid" value="{{ count($datas) > 0 ? $datas[0]->mail : '' }}" placeholder="Email" name="mail" />
                       </div>
                       <span class="form-text text-muted">We'll never share your email address with anyone else.</span>
                     </div>
@@ -274,7 +254,7 @@
                     <label class="col-xl-3 col-lg-3 text-right col-form-label">Site url</label>
                     <div class="col-lg-9 col-xl-6">
                       <div class="input-group input-group-lg input-group-solid">
-                        <input type="text" class="form-control form-control-lg form-control-solid" placeholder="Username" value="loop" />
+                        <input type="text" class="form-control form-control-lg form-control-solid" placeholder="Website uri" value="{{ count($datas) > 0 ? $datas[0]->website_link : '' }}" name="website_link" />
                       </div>
                     </div>
                   </div>
@@ -294,7 +274,7 @@
                     <div class="col-lg-9 col-xl-6">
                       <div class="input-group input-group-lg input-group-solid">
                         <div class="input-group-prepend"><span class="input-group-text"><i class="la la-facebook"></i></span></div>
-                        <input type="text" class="form-control form-control-lg form-control-solid" value="" placeholder="Facebook" />
+                        <input type="text" class="form-control form-control-lg form-control-solid" value="{{ count($datas) > 0 ? $datas[0]->facebook_link : '' }}" placeholder="Facebook" name="facebook_link" />
                       </div>
                     </div>
                   </div>
@@ -303,7 +283,7 @@
                     <div class="col-lg-9 col-xl-6">
                       <div class="input-group input-group-lg input-group-solid">
                         <div class="input-group-prepend"><span class="input-group-text"><i class="la la-instagram"></i></span></div>
-                        <input type="text" class="form-control form-control-lg form-control-solid" value="" placeholder="Instagram" />
+                        <input type="text" class="form-control form-control-lg form-control-solid" value="{{ count($datas) > 0 ? $datas[0]->instagram_link : '' }}" placeholder="Instagram" name="instagram_link" />
                       </div>
                     </div>
                   </div>
